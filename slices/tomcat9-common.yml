@@ -4,7 +4,7 @@ slices:
   core:
     essential:
       - libtomcat9-java_libs
-      - libtomcat9-java_i18n_common
+      - libtomcat9-java_i18n-common
       - openssl_bins
       - libapr1_libs
     contents:

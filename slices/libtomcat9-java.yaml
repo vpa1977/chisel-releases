@@ -2,7 +2,7 @@
 package: libtomcat9-java
 
 slices:
-  i18n_common:
+  i18n-common:
     contents:
       /usr/share/java/tomcat9-i18n-es-9.*.jar:
       /usr/share/java/tomcat9-i18n-es.jar:
@@ -12,7 +12,7 @@ slices:
       /usr/share/java/tomcat9-i18n-ja.jar:
       /usr/share/java/tomcat9-i18n-ru-9.*.jar:
       /usr/share/java/tomcat9-i18n-ru.jar:
-  i18n_extra:
+  i18n-extra:
     contents:
       /usr/share/java/tomcat9-i18n-cs-9.*.jar:
       /usr/share/java/tomcat9-i18n-cs.jar:
