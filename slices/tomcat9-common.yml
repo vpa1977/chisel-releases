@@ -4,6 +4,7 @@ slices:
   core:
     essential:
       - libtomcat9-java_libs
+      - libtomcat9-java_i18n_common
     contents:
       - /usr/libexec/tomcat9/tomcat-locate-java.sh
       - /usr/share/tomcat9/bin/bootstrap.jar
