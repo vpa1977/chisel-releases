@@ -5,6 +5,8 @@ slices:
     essential:
       - libtomcat9-java_libs
       - libtomcat9-java_i18n_common
+      - openssl_bins
+      - libapr1_libs
     contents:
       - /usr/libexec/tomcat9/tomcat-locate-java.sh
       - /usr/share/tomcat9/bin/bootstrap.jar
