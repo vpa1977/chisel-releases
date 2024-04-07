@@ -12,6 +12,7 @@ slices:
       /usr/share/java/tomcat9-i18n-ja.jar:
       /usr/share/java/tomcat9-i18n-ru-9.*.jar:
       /usr/share/java/tomcat9-i18n-ru.jar:
+
   i18n-extra:
     contents:
       /usr/share/java/tomcat9-i18n-cs-9.*.jar:
@@ -24,7 +25,10 @@ slices:
       /usr/share/java/tomcat9-i18n-pt-BR.jar:
       /usr/share/java/tomcat9-i18n-zh-CN-9.*.jar:
       /usr/share/java/tomcat9-i18n-zh-CN.jar:
+
   libs:
+    essential:
+      - libeclipse-jdt-core-java
     contents:
       /usr/share/java/tomcat9-annotations-api-9*.jar:
       /usr/share/java/tomcat9-annotations-api.jar:
