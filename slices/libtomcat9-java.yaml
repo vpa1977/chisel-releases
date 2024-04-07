@@ -28,7 +28,7 @@ slices:
 
   libs:
     essential:
-      - libeclipse-jdt-core-java
+      - libeclipse-jdt-core-java_libs
     contents:
       /usr/share/java/tomcat9-annotations-api-9*.jar:
       /usr/share/java/tomcat9-annotations-api.jar:
