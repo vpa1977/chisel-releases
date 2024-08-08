@@ -1,0 +1,34 @@
+package: openjdk-21-jre-headless
+
+essential:
+  - openjdk-21-jre-headless_copyright
+
+slices:
+  core:
+    essential:
+      - libc6_libs
+      - libgcc-s1_libs
+      - libstdc++6_libs
+      - zlib1g_libs
+
+  security:
+    essential:
+      - ca-certificates-java_data
+      - libpcsclite1_libs
+      - libnss3_libs
+      - openjdk-21-jre-headless_core
+
+  image:
+    essential:
+      - liblcms2-2_libs # liblcms.so
+      - libjpeg-turbo8_libs # libjavajpeg.so
+      - openjdk-21-jre-headless_core
+
+  dependencies:
+    essential:
+      - openjdk-21-jre-headless_security
+      - openjdk-21-jre-headless_image
+
+  copyright:
+    contents:
+      /usr/share/doc/openjdk-21-jre-headless/copyright:
