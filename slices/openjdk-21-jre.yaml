@@ -1,0 +1,20 @@
+package: openjdk-21-jre
+
+essential:
+  - openjdk-21-jre_copyright
+
+slices:
+  core:
+    essential:
+      - openjdk-21-jre-headless_image
+      - libharfbuzz0b_libs # libfontmanager
+      - libfreetype6_libs  # libfontmanager
+      - libglib2.0-0t64_libs # libfontmanager
+      - libgraphite2-3_libs # libfontmanager
+      - libpng16-16t64_libs # libfontmanager
+      - libbrotli1_libs  # libfontmanager
+      - libpcre2-8-0_libs  # libfontmanager
+
+  copyright:
+    contents:
+      /usr/share/doc/openjdk-21-jre/copyright:
