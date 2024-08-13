@@ -6,6 +6,96 @@ package: openjdk-21-jre-headless
 essential:
   - openjdk-21-jre-headless_copyright
 
+
+
+
+
+/etc/java-21-openjdk/accessibility.properties
+/etc/java-21-openjdk/jaxp.properties
+
+
+/etc/java-21-openjdk/management/jmxremote.access
+/etc/java-21-openjdk/management/management.properties
+
+/etc/java-21-openjdk/psfont.properties.ja
+/etc/java-21-openjdk/psfontj2d.properties
+/etc/java-21-openjdk/security
+/etc/java-21-openjdk/security/blocked.certs
+/etc/java-21-openjdk/security/default.policy
+/etc/java-21-openjdk/security/java.policy
+/etc/java-21-openjdk/security/java.security
+/etc/java-21-openjdk/security/nss.cfg
+/etc/java-21-openjdk/security/policy
+/etc/java-21-openjdk/security/policy/README.txt
+/etc/java-21-openjdk/security/policy/limited
+/etc/java-21-openjdk/security/policy/limited/default_US_export.policy
+/etc/java-21-openjdk/security/policy/limited/default_local.policy
+/etc/java-21-openjdk/security/policy/limited/exempt_local.policy
+/etc/java-21-openjdk/security/policy/unlimited
+/etc/java-21-openjdk/security/policy/unlimited/default_US_export.policy
+/etc/java-21-openjdk/security/policy/unlimited/default_local.policy
+/etc/java-21-openjdk/security/public_suffix_list.dat
+/etc/java-21-openjdk/sound.properties
+/etc/java-21-openjdk/swing.properties
+
+
+
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/classlist
+/usr/lib/jvm/java-21-openjdk-amd64/lib/jar.binfmt
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/jfr
+/usr/lib/jvm/java-21-openjdk-amd64/lib/jrt-fs.jar
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libattach.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libdt_socket.so
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libinstrument.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libj2gss.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libj2pcsc.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libj2pkcs11.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libjaas.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libjava.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libjavajpeg.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libjdwp.so
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libjsound.so
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libmanagement.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libmanagement_agent.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libmanagement_ext.so
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/librmi.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libsaproc.so
+/usr/lib/jvm/java-21-openjdk-amd64/lib/libsctp.so
+
+
+
+
+
+/usr/lib/jvm/java-21-openjdk-amd64/conf/accessibility.properties
+/usr/lib/jvm/java-21-openjdk-amd64/conf/jaxp.properties
+
+/usr/lib/jvm/java-21-openjdk-amd64/conf/management/jmxremote.access
+/usr/lib/jvm/java-21-openjdk-amd64/conf/management/management.properties
+
+/usr/lib/jvm/java-21-openjdk-amd64/conf/security/java.policy
+/usr/lib/jvm/java-21-openjdk-amd64/conf/security/java.security
+/usr/lib/jvm/java-21-openjdk-amd64/conf/security/nss.cfg
+/usr/lib/jvm/java-21-openjdk-amd64/conf/sound.properties
+
+/usr/lib/jvm/java-21-openjdk-amd64/lib/jfr/default.jfc
+/usr/lib/jvm/java-21-openjdk-amd64/lib/jfr/profile.jfc
+
+
+      #
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/security/policy/limited/default_US_export.policy:
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/security/policy/limited/default_local.policy:
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/security/policy/limited/exempt_local.policy:
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/security/policy/unlimited/default_US_export.policy:
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/security/policy/unlimited/default_local.policy:
+
+
 slices:
   core:
     essential:
@@ -13,6 +103,56 @@ slices:
       - libgcc-s1_libs
       - libstdc++6_libs
       - zlib1g_libs
+    contents:
+      - /etc/java-21-openjdk/jvm-*.cfg:
+      - /etc/java-21-openjdk/logging.properties:
+      - /etc/java-21-openjdk/net.properties:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/tzdb.dat:
+      - /usr/lib/jvm/java-21-openjdk-*/conf/logging.properties:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/jvm.cfg:
+      - /usr/lib/jvm/java-21-openjdk-*/bin/java:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/server/libjsig.so:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/server/libjvm.so:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/jexec:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/jspawnhelper:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/jvm.cfg-default:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libjli.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libjsig.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libverify.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libzip.so:
+      # lib/modules support
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libjimage.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libnet.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libnio.so:
+      # terminal support
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/lible.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/net.properties:
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/security/java.policy:
+      # rebuild it with jlink
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/modules:
+
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/security/blocked.certs:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/security/cacerts:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/security/default.policy:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/security/public_suffix_list.dat:
+
+
+
+  prefs:
+    essential:
+      - openjdk-21-jre-headless_core
+    contents:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libprefs.so:
+
+  jdknet:
+    essential:
+
+  classescache:
+    essential:
+      - openjdk-21-jre-headless_core
+    contents:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/server/classes.jsa:
+      - /usr/lib/jvm/java-21-openjdk-*/lib/server/classes_nocoops.jsa:
 
   security:
     essential:
@@ -20,12 +160,49 @@ slices:
       - libpcsclite1_libs
       - libnss3_libs
       - openjdk-21-jre-headless_core
+    contents:
 
-  image:
+
+  awt:
     essential:
       - liblcms2-2_libs # liblcms.so
       - libjpeg-turbo8_libs # libjavajpeg.so
       - openjdk-21-jre-headless_core
+    contents:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libawt.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libawt_headless.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/liblcms.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/psfont.properties.ja:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/psfontj2d.properties:
+      - /usr/lib/jvm/java-21-openjdk-amd64/conf/swing.properties:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libfontmanager.so:
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libmlib_image.so:
+
+
+  incubator:
+    essential:
+      - openjdk-21-jre-headless_core
+    contents:
+      # vector api
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libjsvml.so:
+      # foreign function and memory api
+      - /usr/lib/jvm/java-21-openjdk-amd64/lib/libsyslookup.so:
+
+
+
+  tools:
+    essential:
+    contents:
+      - /usr/lib/jvm/java-21-openjdk-amd64/bin/jpackage:
+      - /usr/lib/jvm/java-21-openjdk-amd64/bin/keytool:
+      - /usr/lib/jvm/java-21-openjdk-amd64/bin/rmiregistry:
+
+  jfr:
+    essential:
+    contents:
+      - /etc/java-21-openjdk/jfr/default.jfc:
+      - /etc/java-21-openjdk/jfr/profile.jfc:
+
 
   dependencies:
     essential:
