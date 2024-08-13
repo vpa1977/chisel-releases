@@ -1,5 +1,8 @@
 package: openjdk-21-jre-headless
 
+# OpenJDK slices provide required dependencies for the runtime image.
+# The image itself is built using jlink.
+
 essential:
   - openjdk-21-jre-headless_copyright
 
