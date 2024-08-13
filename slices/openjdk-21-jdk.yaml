@@ -12,12 +12,12 @@ slices:
     essential:
       - openjdk-21-jdk-headless_bins
     contents:
-      - /usr/lib/jvm/java-21-openjdk-amd64/bin/jconsole:
+      /usr/lib/jvm/java-21-openjdk-amd64/bin/jconsole:
 
   headers:
     contents:
-      - /usr/lib/jvm/java-21-openjdk-amd64/include/jawt.h:
-      - /usr/lib/jvm/java-21-openjdk-amd64/include/linux/jawt_md.h:
+      /usr/lib/jvm/java-21-openjdk-amd64/include/jawt.h:
+      /usr/lib/jvm/java-21-openjdk-amd64/include/linux/jawt_md.h:
 
   copyright:
     contents:
