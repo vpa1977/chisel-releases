@@ -9,20 +9,11 @@ essential:
 slices:
   core:
     essential:
-      - openjdk-21-jre-headless_image
-      # libfontmanager.so dependencies
-      - libharfbuzz0b_libs
-      - libfreetype6_libs
-      - libglib2.0-0t64_libs
-      - libgraphite2-3_libs
-      - libpng16-16t64_libs
-      - libbrotli1_libs
-      - libpcre2-8-0_libs
-
-  dependencies:
-    essential:
-      - openjdk-21-jre_core
+      - openjdk-21-jre-headless_awt
       - openjdk-21-jre-headless_security
+      - openjdk-21-jre-headless_classescache
+      - openjdk-21-jre-headless_tools
+      - openjdk-21-jre-headless_jfr
 
   copyright:
     contents:

@@ -1,0 +1,24 @@
+package: openjdk-21-jdk
+
+# OpenJDK slices provide required dependencies for the runtime image.
+# The image itself is built using jlink.
+
+essential:
+  - openjdk-21-jdk_copyright
+
+
+slices:
+  bins:
+    essential:
+      - openjdk-21-jdk-headless_bins
+    contents:
+      - /usr/lib/jvm/java-21-openjdk-amd64/bin/jconsole:
+
+  headers:
+    contents:
+      - /usr/lib/jvm/java-21-openjdk-amd64/include/jawt.h:
+      - /usr/lib/jvm/java-21-openjdk-amd64/include/linux/jawt_md.h:
+
+  copyright:
+    contents:
+      /usr/share/doc/openjdk-21-jdk/copyright:
