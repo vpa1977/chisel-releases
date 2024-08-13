@@ -1,16 +1,14 @@
-summary: Integration tests for openjdk-21-jre-headless
+summary: Integration tests for openjdk-21-jdk-headless
 
 environment:
   SLICE/core: "core"
-  SLICE/classescache: "classescache"
-  SLICE/security: "security"
-  SLICE/awt: "awt"
-  SLICE/incubator: "incubator"
+  SLICE/bins: "bins"
+  SLICE/modules: "modules"
 
 execute: |
   # Test different slice installations
   echo "SLICE=${SLICE}"
-  rootfs="$(install-slices busybox_bins openjdk-21-jre-headless_${SLICE})"
+  rootfs="$(install-slices busybox_bins openjdk-21-jdk-headless_${SLICE})"
   (cd ${rootfs}/usr/bin && for applet in $(${rootfs}/usr/bin/busybox --list); do \
       ln -s busybox $applet ; \
     done)
