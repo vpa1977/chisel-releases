@@ -7,19 +7,10 @@ essential:
   - openjdk-21-jdk-headless_copyright
 
 slices:
-  core:
-    essential:
-      - openjdk-21-jre-headless_security
-      - openjdk-21-jre-headless_classescache
-      - openjdk-21-jre-headless_tools
-      - openjdk-21-jre-headless_jfr
-    contents:
-      /usr/lib/jvm/java-21-openjdk-*/lib/ct.sym:
 
   bins:
     essential:
-      - openjdk-21-jdk-headless_core
-      - openjdk-21-jdk-headless_modules
+      - openjdk-21-jre-headless_core
     contents:
       /usr/lib/jvm/java-21-openjdk-*/bin/jar:
       /usr/lib/jvm/java-21-openjdk-*/bin/jarsigner:
@@ -45,10 +36,12 @@ slices:
       /usr/lib/jvm/java-21-openjdk-*/bin/jstatd:
       /usr/lib/jvm/java-21-openjdk-*/bin/jwebserver:
       /usr/lib/jvm/java-21-openjdk-*/bin/serialver:
+      # used by javac
+      /usr/lib/jvm/java-21-openjdk-*/lib/ct.sym:
 
   modules:
     essential:
-      - openjdk-21-jdk-headless_core
+      - openjdk-21-jdk-headless_bins
     contents:
       /usr/lib/jvm/java-21-openjdk-*/jmods/java.base.jmod:
       /usr/lib/jvm/java-21-openjdk-*/jmods/java.compiler.jmod:
@@ -121,15 +114,20 @@ slices:
       /usr/lib/jvm/java-21-openjdk-*/jmods/jdk.zipfs.jmod:
 
   headers:
+    essential:
+      - openjdk-21-jre-headless_core
     contents:
       /usr/lib/jvm/java-21-openjdk-*/include/classfile_constants.h:
-      /usr/lib/jvm/java-21-openjdk-*/include/jdwpTransport.h:
       /usr/lib/jvm/java-21-openjdk-*/include/jni.h:
       /usr/lib/jvm/java-21-openjdk-*/include/jvmti.h:
       /usr/lib/jvm/java-21-openjdk-*/include/jvmticmlr.h:
       /usr/lib/jvm/java-21-openjdk-*/include/linux/jni_md.h:
 
-
+  debug-headers:
+    essential:
+      - openjdk-21-jre-headless_core
+    contents:
+      /usr/lib/jvm/java-21-openjdk-*/include/jdwpTransport.h:
   copyright:
     essential:
       - openjdk-21-jre-headless_copyright
