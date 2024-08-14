@@ -20,5 +20,7 @@ slices:
       /usr/lib/jvm/java-21-openjdk-amd64/include/linux/jawt_md.h:
 
   copyright:
+    essential:
+      - openjdk-21-jre-headless_copyright
     contents:
-      /usr/share/doc/openjdk-21-jdk/copyright:
+      /usr/share/doc/openjdk-21-jdk:
