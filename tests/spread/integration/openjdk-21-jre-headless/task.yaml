@@ -1,11 +1,16 @@
 summary: Integration tests for openjdk-21-jre-headless
 
 environment:
-  SLICE/core: "core"
-  SLICE/classescache: "classescache"
-  SLICE/security: "security"
   SLICE/awt: "awt"
+  SLICE/classescache: "classescache"
+  SLICE/core: "core"
+  SLICE/debug: "debug"
   SLICE/incubator: "incubator"
+  SLICE/jfr: "jfr"
+  SLICE/management: "management"
+  SLICE/security: "security"
+  SLICE/stcp: "stcp"
+  SLICE/tools: "tools"
 
 execute: |
   # Test different slice installations
