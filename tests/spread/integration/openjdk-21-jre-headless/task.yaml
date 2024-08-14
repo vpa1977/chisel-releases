@@ -2,9 +2,9 @@ summary: Integration tests for openjdk-21-jre-headless
 
 environment:
   SLICE/awt: "awt"
-#  SLICE/classescache: "classescache"
+  SLICE/classescache: "classescache"
 #  SLICE/core: "core"
-#  SLICE/debug: "debug"
+  SLICE/debug: "debug"
 #  SLICE/incubator: "incubator"
 #  SLICE/jfr: "jfr"
 #  SLICE/management: "management"
@@ -29,4 +29,10 @@ execute: |
       cp ImageTest.java ${rootfs}/
       chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java -Djava.awt.headless=true /ImageTest.java
     ;;
+    classescache)
+      cp Main.java ${rootfs}/
+      chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java -XX:ArchiveClassesAtExit=archive.cds /Main.java
+    debug)
+      cp Main.java ${rootfs}/
+      chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 /Main.java
   esac
