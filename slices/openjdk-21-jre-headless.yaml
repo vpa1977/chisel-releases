@@ -127,8 +127,10 @@ slices:
       - libjpeg-turbo8_libs # libjavajpeg.so
       - openjdk-21-jre-headless_core
       # libfontmanager.so dependencies
+      - libbz2-1.0_libs
       - libharfbuzz0b_libs
       - libfreetype6_libs
+      - libfontconfig1_libs
       - libglib2.0-0t64_libs
       - libgraphite2-3_libs
       - libpng16-16t64_libs
