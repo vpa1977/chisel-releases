@@ -6,7 +6,6 @@ package: openjdk-21-jdk
 essential:
   - openjdk-21-jdk_copyright
 
-
 slices:
   bins:
     essential:
@@ -16,7 +15,7 @@ slices:
       /usr/lib/jvm/java-21-openjdk-amd64/bin/jconsole:
 
   headers:
-     essential:
+    essential:
       - openjdk-21-jdk-headless_headers
       - openjdk-21-jre-headless_awt
     contents:
