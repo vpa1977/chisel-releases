@@ -15,10 +15,13 @@ execute: |
       ln -s busybox $applet ; \
     done)
   cp `which link-proc` ${rootfs}/
+  cp Main.java ${rootfs}/
 
   case ${SLICE} in
     bins)
       chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java --version
+      cp Main.java ${rootfs}/
+      chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java /Main.java
       ;;
     modules)
       mkdir -p ${rootfs}/opt/java
