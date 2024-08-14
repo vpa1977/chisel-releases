@@ -11,10 +11,14 @@ slices:
   bins:
     essential:
       - openjdk-21-jdk-headless_bins
+      - openjdk-21-jre-headless_awt
     contents:
       /usr/lib/jvm/java-21-openjdk-amd64/bin/jconsole:
 
   headers:
+     essential:
+      - openjdk-21-jdk-headless_headers
+      - openjdk-21-jre-headless_awt
     contents:
       /usr/lib/jvm/java-21-openjdk-amd64/include/jawt.h:
       /usr/lib/jvm/java-21-openjdk-amd64/include/linux/jawt_md.h:

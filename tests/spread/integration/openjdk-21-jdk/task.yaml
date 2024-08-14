@@ -2,6 +2,7 @@ summary: Integration tests for openjdk-21-jdk
 
 environment:
   SLICE/bins: "bins"
+  SLICE/headers: "headers"
 
 execute: |
   # Test different slice installations
