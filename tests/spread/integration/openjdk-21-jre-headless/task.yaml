@@ -14,10 +14,13 @@ environment:
 
 execute: |
   # Test different slice installations
+  DEB_FRONTEND=noninteractive apt-get install -y dpkg-dev
   echo "SLICE=${SLICE}"
-  rootfs="$(install-slices busybox_bins openjdk-21-jre-headless_${SLICE})"
+  ARCH=`dpkg-architecture -q DEB_HOST_ARCH`
+  JAVA_HOME=/usr/lib/jvm/java-21-openjdk-${ARCH}/
+  rootfs="$(install-slices openjdk-21-jre-headless_${SLICE} busybox_bins)"
   (cd ${rootfs}/usr/bin && for applet in $(${rootfs}/usr/bin/busybox --list); do \
       ln -s busybox $applet ; \
     done)
-  cp smoke.sh "${rootfs}/"
-  chroot ${rootfs} busybox sh /smoke.sh
+  cp `which link-proc` ${rootfs}/
+  chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java --version
