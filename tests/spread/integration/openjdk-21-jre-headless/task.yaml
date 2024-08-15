@@ -42,7 +42,7 @@ execute: |
       chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java -XX:+FlightRecorder -XX:StartFlightRecording=duration=60s,filename=dump.jfr /Main.java
     ;;
     security)
-      cp LoadHttps.java ${rootfs}/
-      chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java /LoadHttps.java
+      cp ReadCertificate.java ${rootfs}/
+      chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java /ReadCertificate.java
     ;;
   esac
