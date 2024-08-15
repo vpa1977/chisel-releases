@@ -6,9 +6,9 @@ environment:
 #  SLICE/core: "core"
   SLICE/debug: "debug"
 #  SLICE/incubator: "incubator"
-#  SLICE/jfr: "jfr"
+  SLICE/jfr: "jfr"
 #  SLICE/management: "management"
-#  SLICE/security: "security"
+  SLICE/security: "security"
 #  SLICE/stcp: "stcp"
 #  SLICE/tools: "tools"
 
@@ -32,7 +32,17 @@ execute: |
     classescache)
       cp Main.java ${rootfs}/
       chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java -XX:ArchiveClassesAtExit=archive.cds /Main.java
+    ;;
     debug)
       cp Main.java ${rootfs}/
       chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 /Main.java
+    ;;
+    jfr)
+      cp Main.java ${rootfs}/
+      chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java -XX:+FlightRecorder -XX:StartFlightRecording=duration=60s,filename=dump.jfr /Main.java
+    ;;
+    security)
+      cp LoadHttps.java ${rootfs}/
+      chroot ${rootfs} sh /link-proc ${JAVA_HOME}/bin/java /LoadHttps.java
+    ;;
   esac
