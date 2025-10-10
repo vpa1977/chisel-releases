@@ -8,7 +8,6 @@ slices:
   standard:
     essential:
       - openjdk-25-jre-headless_class-data-sharing
-      - openjdk-25-jre-headless_console
       - openjdk-25-jre-headless_core
       - openjdk-25-jre-headless_debug
       - openjdk-25-jre-headless_jfr
