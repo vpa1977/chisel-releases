@@ -17,7 +17,6 @@ slices:
       /usr/lib/jvm/java-25-openjdk-*/bin/jdeprscan:
       /usr/lib/jvm/java-25-openjdk-*/bin/jdeps:
       /usr/lib/jvm/java-25-openjdk-*/bin/jimage:
-      /usr/lib/jvm/java-25-openjdk-*/bin/jnativescan:
       /usr/lib/jvm/java-25-openjdk-*/bin/serialver:
       # used by javac
       /usr/lib/jvm/java-25-openjdk-*/lib/ct.sym:
@@ -41,6 +40,7 @@ slices:
           - s390x
       /usr/lib/jvm/java-25-openjdk-*/bin/jinfo:
       /usr/lib/jvm/java-25-openjdk-*/bin/jmap:
+      /usr/lib/jvm/java-25-openjdk-*/bin/jnativescan:
       /usr/lib/jvm/java-25-openjdk-*/bin/jps:
       /usr/lib/jvm/java-25-openjdk-*/bin/jrunscript:
       /usr/lib/jvm/java-25-openjdk-*/bin/jshell:
